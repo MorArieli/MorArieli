@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Mor Arieli – Marketing Manager</title>
+<title>Mor Arieli - Growth Marketing Manager</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -13,7 +13,6 @@
 }
 body{font-family:var(--sans);color:var(--black);background:var(--white);line-height:1.6}
 a{color:inherit;text-decoration:none}
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:56px}
 .nav-name{font-size:15px;font-weight:600;letter-spacing:0.04em}
 .nav-links{display:flex;gap:28px}
@@ -21,11 +20,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-links a:hover{color:var(--black)}
 .nav-cta{background:var(--black);color:var(--white);padding:8px 20px;border-radius:4px;font-size:13px;font-weight:500;transition:opacity 0.2s}
 .nav-cta:hover{opacity:0.8}
-
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 8%;padding-top:56px;background:var(--white)}
-.hero-eyebrow{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:24px}
-.hero-title{font-family:var(--serif);font-size:clamp(48px,7vw,88px);line-height:1.05;font-weight:400;margin-bottom:28px;max-width:820px}
+.hero-title{font-family:var(--serif);font-size:clamp(36px,5vw,64px);line-height:1.05;font-weight:400;margin-bottom:28px;max-width:820px}
 .hero-title em{font-style:italic;color:var(--muted)}
 .hero-desc{font-size:18px;color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:40px}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
@@ -35,27 +31,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .btn-secondary:hover{background:var(--light)}
 .hero-scroll{margin-top:80px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
 .hero-scroll::before{content:'';width:40px;height:1px;background:var(--border)}
-
-/* METRICS STRIP */
 .metrics{background:var(--black);color:var(--white);display:grid;grid-template-columns:repeat(4,1fr);padding:48px 8%}
 .metric{text-align:center;padding:0 16px;border-right:1px solid rgba(255,255,255,0.1)}
 .metric:last-child{border-right:none}
 .metric-num{font-family:var(--serif);font-size:clamp(36px,4vw,52px);font-weight:400;color:var(--gold);line-height:1}
 .metric-label{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:8px}
-
-/* SECTIONS */
 section{padding:96px 8%}
 .section-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
 .section-title{font-family:var(--serif);font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.15;margin-bottom:48px}
-
-/* WHAT I DO */
 .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
 .pillar{border-top:2px solid var(--black);padding-top:24px}
 .pillar-icon{font-size:20px;margin-bottom:12px}
 .pillar-title{font-size:16px;font-weight:600;margin-bottom:8px}
 .pillar-desc{font-size:14px;color:var(--muted);line-height:1.6}
-
-/* WORK TABS */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;border-bottom:1px solid var(--border);padding-bottom:0}
 .tab{padding:10px 18px;font-size:13px;font-weight:500;border:none;background:none;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;letter-spacing:0.03em;transition:all 0.2s}
 .tab.active{color:var(--black);border-bottom-color:var(--black)}
@@ -78,8 +66,6 @@ section{padding:96px 8%}
 .work-card-title{font-size:15px;font-weight:600;margin-bottom:8px;line-height:1.4}
 .work-card-desc{font-size:13px;color:var(--muted);line-height:1.6}
 .work-card-stat{margin-top:12px;font-size:12px;font-weight:600;color:var(--black);background:var(--white);display:inline-block;padding:4px 10px;border-radius:20px}
-
-/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .about-text p{font-size:17px;line-height:1.8;color:#333;margin-bottom:20px}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:32px}
@@ -92,8 +78,6 @@ section{padding:96px 8%}
 .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:4px}
 .exp-bullets li{font-size:13px;color:#555;padding-left:12px;position:relative}
 .exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:11px;top:1px}
-
-/* CONTACT */
 .contact-inner{background:var(--black);color:var(--white);border-radius:12px;padding:72px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:40px}
 .contact-left h2{font-family:var(--serif);font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.15;margin-bottom:16px}
 .contact-left p{color:rgba(255,255,255,0.5);font-size:16px;max-width:420px}
@@ -103,10 +87,7 @@ section{padding:96px 8%}
 .contact-link-icon{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:14px}
 .contact-cta{margin-top:8px;background:var(--gold);color:var(--black);padding:14px 32px;border-radius:4px;font-size:14px;font-weight:600;display:inline-block;transition:opacity 0.2s}
 .contact-cta:hover{opacity:0.85}
-
 footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}
-
-/* RESPONSIVE */
 @media(max-width:768px){
   .metrics{grid-template-columns:repeat(2,1fr);gap:32px}
   .metric{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:24px}
@@ -119,7 +100,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
 <body>
 
 <nav>
-  <span class="nav-name">Mor Arieli</span>
+  <span class="nav-name">Mor Arieli · AI Marketing</span>
   <div class="nav-links">
     <a href="#work">Work</a>
     <a href="#about">About</a>
@@ -128,11 +109,9 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
   <a href="mailto:morarieli.video@gmail.com" class="nav-cta">Let's Talk</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <p class="hero-eyebrow">Marketing Manager</p>
   <h1 class="hero-title">Content that<br><em>builds pipelines,</em><br>not just impressions.</h1>
-  <p class="hero-desc">6+ years turning complex B2B tech into content that converts across every channel, from LinkedIn to YouTube to AI-optimised web copy.</p>
+  <p class="hero-desc">6+ years turning complex B2B tech into content that converts across every marketing channel.</p>
   <div class="hero-btns">
     <a href="#work" class="btn-primary">See My Work</a>
     <a href="#contact" class="btn-secondary">Let's Talk</a>
@@ -140,27 +119,25 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
   <p class="hero-scroll">Scroll to explore</p>
 </section>
 
-<!-- METRICS -->
 <div class="metrics">
   <div class="metric">
-    <div class="metric-num">300%</div>
-    <div class="metric-label">Instagram growth</div>
+    <div class="metric-num">B2B</div>
+    <div class="metric-label">SaaS & Tech</div>
   </div>
   <div class="metric">
-    <div class="metric-num">71%</div>
-    <div class="metric-label">LinkedIn growth (7K→13K)</div>
+    <div class="metric-num">6+</div>
+    <div class="metric-label">Years experience</div>
   </div>
   <div class="metric">
-    <div class="metric-num">34%</div>
-    <div class="metric-label">GEO citation boost</div>
+    <div class="metric-num">GEO</div>
+    <div class="metric-label">AI search optimised</div>
   </div>
   <div class="metric">
-    <div class="metric-num">10%</div>
-    <div class="metric-label">Avg. engagement rate</div>
+    <div class="metric-num">Full</div>
+    <div class="metric-label">Funnel execution</div>
   </div>
 </div>
 
-<!-- WHAT I DO -->
 <section id="services">
   <p class="section-eyebrow">What I Do</p>
   <h2 class="section-title">Full-funnel content,<br>built for growth.</h2>
@@ -173,7 +150,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
     <div class="pillar">
       <div class="pillar-icon">✦</div>
       <div class="pillar-title">Social Media & Community</div>
-      <div class="pillar-desc">Organic growth across LinkedIn, Instagram, TikTok, X, and Facebook — copy, graphics, and video, all made in-house.</div>
+      <div class="pillar-desc">Organic growth across LinkedIn, Instagram, TikTok, X, and Facebook - copy, graphics, and video, all made in-house.</div>
     </div>
     <div class="pillar">
       <div class="pillar-icon">✦</div>
@@ -183,12 +160,11 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
     <div class="pillar">
       <div class="pillar-icon">✦</div>
       <div class="pillar-title">Video & Visual Production</div>
-      <div class="pillar-desc">End-to-end video — concept, shoot, edit, post-production. From 64K-view YouTube testimonials to viral TikToks.</div>
+      <div class="pillar-desc">End-to-end video - concept, shoot, edit, post-production. From 64K-view YouTube testimonials to viral TikToks.</div>
     </div>
   </div>
 </section>
 
-<!-- WORK -->
 <section id="work" style="padding-top:0">
   <p class="section-eyebrow">Selected Work</p>
   <h2 class="section-title">Every channel.<br>Every format.</h2>
@@ -206,7 +182,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
   <div id="tab-linkedin" class="tab-panel active">
     <div class="work-grid">
       <div class="work-card">
-        <div class="work-card-img linkedin" style="color:#fff;font-family:Georgia,serif;font-size:14px;padding:20px;align-items:flex-start;flex-direction:column;justify-content:flex-end;background:linear-gradient(135deg,#0077b5,#00a0dc)">
+        <div class="work-card-img linkedin" style="color:#fff;font-family:Georgia,serif;font-size:14px;padding:20px;align-items:flex-start;flex-direction:column;justify-content:flex-end">
           <p style="font-weight:600;margin-bottom:4px">The Science Behind Cryoablation</p>
           <p style="opacity:0.8;font-size:12px">8-page educational carousel</p>
         </div>
@@ -242,7 +218,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         </div>
       </div>
     </div>
-    <p style="margin-top:28px;font-size:14px;color:var(--muted)">Grew IceCure Medical's LinkedIn from 7K to 13K followers organically — a 71% increase — achieving 10% avg. engagement rate and 6% CTR, significantly outperforming industry benchmarks.</p>
+    <p style="margin-top:28px;font-size:14px;color:var(--muted)">Grew IceCure Medical's LinkedIn from 7K to 13K followers organically - a 71% increase - achieving 10% avg. engagement rate and 6% CTR, significantly outperforming industry benchmarks.</p>
   </div>
 
   <div id="tab-instagram" class="tab-panel">
@@ -254,7 +230,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         </div>
         <div class="work-card-body">
           <div class="work-card-tag">Instagram · Video Reel</div>
-          <div class="work-card-title">HCP testimonial — Hebrew market</div>
+          <div class="work-card-title">HCP testimonial - Hebrew market</div>
           <div class="work-card-desc">Short-form video featuring physician perspective on ProSense technology, produced and edited entirely in-house. 25.1K views.</div>
           <span class="work-card-stat">25.1K views</span>
         </div>
@@ -278,17 +254,18 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         </div>
         <div class="work-card-body">
           <div class="work-card-tag">Instagram · Breaking News</div>
-          <div class="work-card-title">Clinical trial results — community moment</div>
+          <div class="work-card-title">Clinical trial results - community moment</div>
           <div class="work-card-desc">Announced completion of the largest cryoablation breast cancer study of its kind in the US, achieving 96.39% recurrence-free rate.</div>
-          <span class="work-card-stat">300% follower growth (300→1,200)</span>
+          <span class="work-card-stat">300% follower growth (300 to 1,200)</span>
         </div>
       </div>
     </div>
-    <p style="margin-top:28px;font-size:14px;color:var(--muted)">Grew IceCure's Instagram organically from 300 to 1,200 followers — a 300% increase — with 9K average monthly profile impressions.</p>
+    <p style="margin-top:28px;font-size:14px;color:var(--muted)">Grew IceCure's Instagram organically from 300 to 1,200 followers - a 300% increase - with 9K average monthly profile impressions.</p>
   </div>
 
   <div id="tab-youtube" class="tab-panel">
     <div class="work-grid">
+      <a href="https://www.youtube.com/watch?v=Zq1vsIx6Zoo" target="_blank" style="text-decoration:none;color:inherit;display:block">
       <div class="work-card">
         <div class="work-card-img youtube" style="color:#fff;padding:20px;flex-direction:column;justify-content:flex-end;align-items:flex-start">
           <p style="font-weight:600;font-size:14px;margin-bottom:4px">Breast Cryoablation Testimonial</p>
@@ -301,6 +278,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
           <span class="work-card-stat">44K views · direct lead source</span>
         </div>
       </div>
+      </a>
       <div class="work-card">
         <div class="work-card-img youtube" style="color:#fff;padding:20px;flex-direction:column;justify-content:flex-end;align-items:flex-start;background:#8b0000">
           <p style="font-weight:600;font-size:14px;margin-bottom:4px">Olim Hadashim in the IDF</p>
@@ -350,7 +328,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         <div class="work-card-body">
           <div class="work-card-tag">X (Twitter) · Clinical</div>
           <div class="work-card-title">Real-world proof for a medical audience</div>
-          <div class="work-card-desc">Documented a successful #breastcancer cryoablation procedure with before/after ultrasound imagery — combining clinical credibility with accessible copy.</div>
+          <div class="work-card-desc">Documented a successful #breastcancer cryoablation procedure with before/after ultrasound imagery - combining clinical credibility with accessible copy.</div>
           <span class="work-card-stat">1.1K impressions</span>
         </div>
       </div>
@@ -362,7 +340,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         <div class="work-card-body">
           <div class="work-card-tag">X (Twitter) · Awareness</div>
           <div class="work-card-title">Educational content calendar execution</div>
-          <div class="work-card-desc">Lung Cancer Awareness Month animated GIF post educating on NSCLC subtypes — designed, written, and published as part of a multi-channel awareness campaign.</div>
+          <div class="work-card-desc">Lung Cancer Awareness Month animated GIF post educating on NSCLC subtypes - designed, written, and published as part of a multi-channel awareness campaign.</div>
           <span class="work-card-stat">3K avg monthly impressions</span>
         </div>
       </div>
@@ -378,7 +356,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         </div>
         <div class="work-card-body">
           <div class="work-card-tag">TikTok · Viral Video</div>
-          <div class="work-card-title">89.8K views — organic recruitment storytelling</div>
+          <div class="work-card-title">89.8K views - organic recruitment storytelling</div>
           <div class="work-card-desc">Short-form video for the Israeli Air Force TikTok channel, created during active reserve duty in 2023. Demonstrates ability to produce high-impact content under pressure.</div>
           <span class="work-card-stat">89.8K views</span>
         </div>
@@ -391,7 +369,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         <div class="work-card-body">
           <div class="work-card-tag">TikTok · Story</div>
           <div class="work-card-title">Behind-the-scenes military storytelling</div>
-          <div class="work-card-desc">Feature on IAF medics filmed during reserve duty — blending authentic documentary style with TikTok-native pacing and caption strategy.</div>
+          <div class="work-card-desc">Feature on IAF medics filmed during reserve duty - blending authentic documentary style with TikTok-native pacing and caption strategy.</div>
           <span class="work-card-stat">2,929 likes</span>
         </div>
       </div>
@@ -403,7 +381,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         <div class="work-card-body">
           <div class="work-card-tag">Facebook / Video · Viral</div>
           <div class="work-card-title">Most viral IDF video of 2016</div>
-          <div class="work-card-desc">Directed and produced the most viral video the IDF Spokesperson Unit ever posted — the 3rd most watched Facebook video in Israel in 2016, with 2.2 million views.</div>
+          <div class="work-card-desc">Directed and produced the most viral video the IDF Spokesperson Unit ever posted - the 3rd most watched Facebook video in Israel in 2016, with 2.2 million views.</div>
           <span class="work-card-stat">2.2M Facebook views</span>
         </div>
       </div>
@@ -419,7 +397,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         </div>
         <div class="work-card-body">
           <div class="work-card-tag">Ghostwriting · Forbes</div>
-          <div class="work-card-title">C-suite thought leadership — Forbes placement</div>
+          <div class="work-card-title">C-suite thought leadership - Forbes placement</div>
           <div class="work-card-desc">Ghostwrote CEO's first Forbes Business Development Council article: "Barriers to Adopting Disruptive Technologies in Healthcare and How to Overcome Them." 61 reactions.</div>
           <span class="work-card-stat">Forbes BDC · 61 reactions</span>
         </div>
@@ -432,13 +410,13 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         <div class="work-card-body">
           <div class="work-card-tag">Ghostwriting · Crisis Comms</div>
           <div class="work-card-title">CEO voice in a moment that mattered</div>
-          <div class="work-card-desc">Ghostwrote a sensitive, high-stakes CEO post responding to the October 7th attacks — balancing personal grief, brand values, and global audience sensitivity. 371 reactions.</div>
+          <div class="work-card-desc">Ghostwrote a sensitive, high-stakes CEO post responding to the October 7th attacks - balancing personal grief, brand values, and global audience sensitivity. 371 reactions.</div>
           <span class="work-card-stat">371 reactions · 10 comments</span>
         </div>
       </div>
       <div class="work-card">
         <div class="work-card-img ghost" style="color:#fff;padding:20px;flex-direction:column;justify-content:flex-end;align-items:flex-start;background:#2d2d2d">
-          <p style="font-weight:600;font-size:14px;margin-bottom:4px">Women's Day — Employee Spotlight</p>
+          <p style="font-weight:600;font-size:14px;margin-bottom:4px">Women's Day - Employee Spotlight</p>
           <p style="opacity:0.8;font-size:12px">Brand culture content</p>
         </div>
         <div class="work-card-body">
@@ -473,7 +451,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
         <div class="work-card-body">
           <div class="work-card-tag">SEO Blog · Medical</div>
           <div class="work-card-title">Technical SEO content for HCP audiences</div>
-          <div class="work-card-desc">Long-form SEO blog translating complex oncology research into accessible content for both patients and medical professionals — driving organic traffic and social shares.</div>
+          <div class="work-card-desc">Long-form SEO blog translating complex oncology research into accessible content for both patients and medical professionals - driving organic traffic and social shares.</div>
           <span class="work-card-stat">Organic traffic driver · LinkedIn-shared</span>
         </div>
       </div>
@@ -493,16 +471,15 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" style="background:var(--light)">
   <p class="section-eyebrow">About</p>
   <h2 class="section-title">Strategist. Creator.<br>Pipeline builder.</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm Mor Arieli, a bilingual (English & Hebrew) B2B marketing professional with 6+ years of experience building content that doesn't just look good, but drives demand.</p>
+      <p>I'm Mor Arieli - a bilingual (English & Hebrew) B2B marketing professional with 6+ years of experience building content that doesn't just look good, but drives demand.</p>
       <p>I've grown social channels from scratch, ghostwritten for C-suite executives in Forbes, produced videos with millions of views, and architected AI workflows that boosted GEO citation rates by 34%. I do all of this in-house: strategy, copy, graphics, and video.</p>
-      <p>My background spans cybersecurity, medtech, and defence — industries where communicating complex ideas simply and credibly is everything.</p>
-      <div class="skills-grid" style="margin-top:32px">
+      <p>My background spans cybersecurity, medtech, and defence - industries where communicating complex ideas simply and credibly is everything.</p>
+      <div class="skills-grid">
         <div class="skill-tag">HubSpot</div>
         <div class="skill-tag">Salesforce Mktg Cloud</div>
         <div class="skill-tag">AirOps (AI Workflows)</div>
@@ -518,7 +495,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
     <div class="about-exp">
       <div class="exp-item featured">
         <div class="exp-role">Operations & Content Marketing Manager</div>
-        <div class="exp-company">ARMO (B2B Cybersecurity) · 2025–2026</div>
+        <div class="exp-company">ARMO (B2B Cybersecurity) · 2025-2026</div>
         <ul class="exp-bullets">
           <li>End-to-end marketing ops & content in a global B2B startup</li>
           <li>Deep-research marketing strategy aligned to demand goals</li>
@@ -527,26 +504,26 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
       </div>
       <div class="exp-item featured">
         <div class="exp-role">Digital Marketing Specialist</div>
-        <div class="exp-company">IceCure Medical · 2022–2025</div>
+        <div class="exp-company">IceCure Medical · 2022-2025</div>
         <ul class="exp-bullets">
-          <li>LinkedIn: 7K → 13K followers (+71%), 10% eng. rate, 6% CTR</li>
-          <li>Instagram: 300 → 1,200 followers (+300%), 9K monthly impressions</li>
+          <li>LinkedIn: 7K to 13K followers (+71%), 10% eng. rate, 6% CTR</li>
+          <li>Instagram: 300 to 1,200 followers (+300%), 9K monthly impressions</li>
           <li>Salesforce Marketing Cloud CRM & global lead nurturing</li>
         </ul>
       </div>
       <div class="exp-item">
         <div class="exp-role">Content & Video Creator</div>
-        <div class="exp-company">Freelance · 2016–2022</div>
+        <div class="exp-company">Freelance · 2016-2022</div>
         <ul class="exp-bullets">
           <li>Global clients: Amazon, Stratasys, Mekorot, Meuhedet</li>
-          <li>Full-cycle: concept → copywriting → post-production</li>
+          <li>Full-cycle: concept to copywriting to post-production</li>
         </ul>
       </div>
       <div class="exp-item">
         <div class="exp-role">Video Editor & Director</div>
-        <div class="exp-company">IDF Spokesperson Unit · 2015–2017</div>
+        <div class="exp-company">IDF Spokesperson Unit · 2015-2017</div>
         <ul class="exp-bullets">
-          <li>Most viral IDF video ever — 2.2M Facebook views</li>
+          <li>Most viral IDF video ever - 2.2M Facebook views</li>
           <li>3rd most watched Facebook video in Israel, 2016</li>
         </ul>
       </div>
@@ -554,12 +531,11 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
     <div class="contact-left">
-      <h2>Let's Create!</h2>
-      <p>Contact me for more information.</p>
+      <h2>Ready to build<br>something that grows?</h2>
+      <p>Let's talk about your next campaign, content strategy, or marketing challenge.</p>
       <a href="mailto:morarieli.video@gmail.com" class="contact-cta" style="margin-top:28px;display:inline-block">Send me a message</a>
     </div>
     <div class="contact-right">
@@ -581,7 +557,7 @@ footer{padding:32px 8%;border-top:1px solid var(--border);display:flex;justify-c
 
 <footer>
   <span>© 2026 Mor Arieli</span>
-  <span>Marketing Manager · B2B Tech & SaaS</span>
+  <span>Growth Marketing Manager · B2B Tech & SaaS</span>
 </footer>
 
 <script>
