@@ -23,17 +23,58 @@ h1,h2,h3,.nav-logo,.section-title,.case-title,.blog-title,.video-title,.stat-num
 .btn-white:hover{background:#e8e8e8;transform:translateY(-1px)}
 
 /* HERO TYPEWRITING & CYCLING EFFECT */
-#hero-cycle{display:inline-block;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;min-width:2px}
-#hero-cycle::after{content:'';position:absolute;right:-4px;top:8%;height:80%;width:3px;background:linear-gradient(135deg,#4a9eff,#a78bfa);border-radius:2px;animation:blink .8s steps(1) infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.hero-word-out{animation:wordOut .35s ease forwards}
-.hero-word-in{animation:wordIn .45s cubic-bezier(.22,1,.36,1) forwards}
-@keyframes wordOut{0%{opacity:1;transform:translateY(0) blur(0px)}100%{opacity:0;transform:translateY(-18px);filter:blur(6px)}}
-@keyframes wordIn{0%{opacity:0;transform:translateY(22px);filter:blur(8px)}100%{opacity:1;transform:translateY(0);filter:blur(0px)}}
-#hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.55}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,11,22,0.3) 0%,rgba(6,11,22,0.1) 40%,rgba(6,11,22,0.85) 100%);z-index:1}
-#hero{position:relative}
-#hero>*:not(#hero-video):not(.hero-overlay){position:relative;z-index:2}
+.hero-title-container {
+  display: block;
+  white-space: nowrap; /* Prevents text wrapping mid-sentence */
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto 28px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  /* Reduced mobile size slightly to guarantee everything fits on one single line */
+  font-size: clamp(24px, 5.5vw, 72px); 
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+#hero-cycle {
+  display: inline-block;
+  background: linear-gradient(135deg, #4a9eff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  min-width: 2px;
+  text-align: left;
+}
+
+#hero-cycle::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 8%;
+  height: 80%;
+  width: 3px;
+  background: linear-gradient(135deg, #4a9eff, #a78bfa);
+  border-radius: 2px;
+  animation: blink .8s steps(1) infinite;
+}
+
+@keyframes blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
+.hero-word-out { animation: wordOut .25s ease forwards }
+.hero-word-in { animation: wordIn .35s cubic-bezier(.22,1,.36,1) forwards }
+
+@keyframes wordOut { 
+  0% { opacity: 1; transform: translateY(0); filter: blur(0px); } 
+  100% { opacity: 0; transform: translateY(-10px); filter: blur(4px); } 
+}
+@keyframes wordIn { 
+  0% { opacity: 0; transform: translateY(12px); filter: blur(4px); } 
+  100% { opacity: 1; transform: translateY(0); filter: blur(0px); } 
+}
 
 /* DYNAMIC SCROLLSPY NAVIGATION */
 nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 48px);max-width:1100px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 28px;border-radius:999px;transition:background 0.3s, border-color 0.3s}
@@ -154,11 +195,15 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 
 <!-- HERO -->
 <section id="hero">
-  <video id="hero-video" autoplay loop muted playsinline poster="">
+  <video id="hero-video" autoplay loop muted playsinline>
     <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_115655_b4d9cd77-feed-43cd-a198-af78ebdf1f7a.mp4" type="video/mp4"/>
   </video>
   <div class="hero-overlay"></div>
-  <h1 class="reveal">B2B Marketing that<br>drives <em id="hero-cycle">real growth.</em></h1>
+  
+  <div class="hero-title-container reveal">
+    <h1>B2B Marketing that drives <em id="hero-cycle">real growth.</em></h1>
+  </div>
+  
   <p class="hero-sub reveal d2">AI-driven strategies and high-impact content that create demand, connection, and brand authority.</p>
   <div class="hero-btns reveal d2">
     <a href="#work" class="btn-white">See My Work ↗</a>
