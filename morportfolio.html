@@ -12,11 +12,11 @@ body{background:#060b16;color:#fff;font-family:'Open Sans',sans-serif;font-weigh
 h1,h2,h3,.nav-logo,.section-title,.case-title,.blog-title,.video-title,.stat-num,.case-metric-val,.big-num{font-family:'Montserrat',sans-serif}
 
 .glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.13);position:relative;overflow:hidden}
-.glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.28) 0%,rgba(255,255,255,0.04) 50%,rgba(255,255,255,0.28) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.btn-glass{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border:1px solid rgba(255,255,255,0.18);color:#fff;padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:500;font-size:15px;cursor:pointer;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
-.btn-glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.4) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.28) 0%,rgba(255,255,255,0.04) 50%,rgba(255,255,255,0.28) 100%)}
+.btn-glass{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.8);padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;position:relative;transition:all .2s;text-decoration:none}
+.btn-glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.4) 100%);-webkit-mask:linear-gradient(#fff 0,#fff calc(100% - 1px),transparent calc(100% - 1px));mask:linear-gradient(#fff 0,#fff calc(100% - 1px),transparent calc(100% - 1px));pointer-events:none}
 .btn-glass:hover{background:rgba(255,255,255,0.14);transform:translateY(-1px)}
-.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#060b16;padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;transition:all .3s;border:none}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#060b16;padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;transition:all .2s}
 .btn-white:hover{background:#e8e8e8;transform:translateY(-1px)}
 
 #hero-cycle{
@@ -43,26 +43,26 @@ h1,h2,h3,.nav-logo,.section-title,.case-title,.blog-title,.video-title,.stat-num
 #hero>*:not(#hero-video):not(.hero-overlay){position:relative;z-index:2}
 
 /* NAV */
-nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 48px);max-width:1100px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 28px;border-radius:999px}
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 48px);max-width:1100px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 28px;border-radius:20px}
 .nav-logo{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.3px}
 .nav-links{display:flex;align-items:center;gap:2px}
 .nav-link{padding:8px 14px;border-radius:999px;color:rgba(255,255,255,0.75);font-size:13px;font-weight:400;text-decoration:none;transition:all .2s}
 .nav-link:hover{color:#fff;background:rgba(255,255,255,0.08)}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px;position:relative;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(74,158,255,0.14) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(167,139,250,0.09) 0%,transparent 60%),#060b16}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px;position:relative;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(74,158,255,0.1),rgba(6,11,22,0))}
 h1{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(42px,7vw,82px);line-height:1.05;letter-spacing:-2px;max-width:860px;margin-bottom:28px}
 h1 em{font-style:normal;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:clamp(15px,2vw,17px);color:rgba(255,255,255,0.58);max-width:560px;margin:0 auto 48px;font-weight:300;line-height:1.75;font-family:'Open Sans',sans-serif}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.28);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Open Sans',sans-serif}
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.28);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
 .scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,0.3),transparent);animation:sline 2s infinite}
 @keyframes sline{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* LAYOUT */
 .wrap{max-width:1100px;margin:0 auto;padding:100px 24px}
 .divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,0.09),transparent);max-width:1100px;margin:0 auto}
-.section-badge{display:inline-block;border-radius:999px;padding:6px 18px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:20px;font-family:'Open Sans',sans-serif}
+.section-badge{display:inline-block;border-radius:999px;padding:6px 18px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:20px}
 .section-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(30px,4.5vw,52px);line-height:1.05;letter-spacing:-1.5px;margin-bottom:16px}
 .section-sub{color:rgba(255,255,255,0.5);font-size:15px;font-weight:300;line-height:1.7;font-family:'Open Sans',sans-serif}
 .section-hd{margin-bottom:56px}
@@ -96,7 +96,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webk
 .video-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600}
 .video-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:17px;line-height:1.25;margin-bottom:8px}
 .video-desc{font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif}
-.video-stat{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;background:rgba(74,255,158,0.08);color:rgba(74,255,158,0.85);border:1px solid rgba(74,255,158,0.18);font-family:'Open Sans',sans-serif}
+.video-stat{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;background:rgba(74,255,158,0.08);color:rgba(74,255,158,0.9)}
 
 /* CASE */
 .case-card{border-radius:28px;overflow:hidden;margin-bottom:20px}
@@ -117,7 +117,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webk
 .contact-wrap{text-align:center;padding:80px 24px 60px;max-width:680px;margin:0 auto}
 
 /* FOOTER */
-footer{border-top:1px solid rgba(255,255,255,0.06);padding:28px 24px;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;font-size:13px;color:rgba(255,255,255,0.28);font-family:'Open Sans',sans-serif}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:28px 24px;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;font-size:13px;color:rgba(255,255,255,0.25)}
 footer a{color:rgba(255,255,255,0.28);text-decoration:none;transition:color .2s}
 footer a:hover{color:rgba(255,255,255,0.7)}
 
@@ -143,8 +143,8 @@ footer a:hover{color:rgba(255,255,255,0.7)}
     <a href="#about" class="nav-link">About</a>
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#work" class="nav-link">Work</a>
-    <a href="#case-study" class="nav-link">Case Studies</a>
     <a href="#social" class="nav-link">Social</a>
+    <a href="#case-study" class="nav-link">Case Studies</a>
     <a href="#contact" class="btn-white" style="padding:8px 20px;font-size:13px">Contact ↗</a>
   </div>
 </nav>
@@ -228,7 +228,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div class="skill-icon" style="background:rgba(255,100,130,0.12)">📄</div>
       <div class="skill-name">Sales Enablement</div>
       <div class="skill-desc">Case studies, presentations, whitepapers, and battle cards that accelerate sales cycles and support global stakeholders</div>
-      <div class="tags"><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Case Studies</span><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Whitepapers</span><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Decks</span></div>
+      <div class="tags"><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Case Studies</span><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Presentations</span></div>
     </div>
 
   </div>
@@ -248,7 +248,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div class="video-embed" id="yt1" onclick="loadYT(this,'Zq1vsIx6Zoo')" style="cursor:pointer">
         <img src="https://img.youtube.com/vi/Zq1vsIx6Zoo/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3)">
-          <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:22px">▶</div>
+          <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:24px">▶</div>
         </div>
       </div>
       <div class="video-body">
@@ -263,7 +263,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div class="video-embed" id="yt2" onclick="loadYT(this,'TMFCem1EfRQ')" style="cursor:pointer">
         <img src="https://img.youtube.com/vi/TMFCem1EfRQ/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3)">
-          <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:22px">▶</div>
+          <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:24px">▶</div>
         </div>
       </div>
       <div class="video-body">
@@ -278,7 +278,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <a href="https://www.facebook.com/share/v/18KY9JDoDH/" target="_blank" style="text-decoration:none;display:block">
         <div class="video-embed-placeholder" style="background:linear-gradient(135deg,rgba(74,158,255,0.15),rgba(167,139,250,0.1));position:relative;overflow:hidden;cursor:pointer">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:24px;text-align:center">
-            <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid rgba(255,255,255,0.3)">▶</div>
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid rgba(255,255,255,0.3)">🎬</div>
             <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff">IDF Rosh Hashana Video</div>
             <div style="font-size:12px;color:rgba(255,255,255,0.55);font-family:'Open Sans',sans-serif">#3 most-watched video in Israel · 2M+ views</div>
             <div style="font-size:11px;color:rgba(255,255,255,0.35);font-family:'Open Sans',sans-serif;border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:999px">Watch on Facebook ↗</div>
@@ -297,7 +297,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <a href="https://www.tiktok.com/@israeli_air_force/video/7319960942622543112" target="_blank" style="text-decoration:none;display:block">
         <div class="video-embed-placeholder" style="background:linear-gradient(135deg,rgba(255,100,80,0.15),rgba(255,180,50,0.1));position:relative;overflow:hidden;cursor:pointer">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:24px;text-align:center">
-            <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid rgba(255,255,255,0.3)">▶</div>
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid rgba(255,255,255,0.3)">🎬</div>
             <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff">IAF Reserve Soldiers</div>
             <div style="font-size:12px;color:rgba(255,255,255,0.55);font-family:'Open Sans',sans-serif">Israeli Air Force TikTok · Reserve duty production</div>
             <div style="font-size:11px;color:rgba(255,255,255,0.35);font-family:'Open Sans',sans-serif;border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:999px">Watch on TikTok ↗</div>
@@ -312,79 +312,6 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       </div>
     </div>
 
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- CASE STUDIES -->
-<div class="wrap" id="case-study">
-  <div class="section-hd reveal">
-    <div class="section-badge glass">Case Studies</div>
-    <h2 class="section-title">From complexity to results.</h2>
-    <p class="section-sub">Turning technical data into global marketing assets that close deals.</p>
-  </div>
-
-  <!-- Case 1: IceCure -->
-  <div class="case-card glass reveal">
-    <div class="case-header">
-      <div class="case-label">IceCure Medical - Clinical Case Study - CHU de Nimes</div>
-      <h3 class="case-title">MSK Pain Palliation - Turning a Clinical Report into a Global Sales Asset</h3>
-      <p class="case-body-text">IceCure Medical conducts clinical procedures at leading medical centers worldwide. My role was to transform raw clinical data and physician feedback into a polished, compliant case study that could drive HCP awareness globally - bridging the gap between medical evidence and marketing impact.</p>
-    </div>
-    <div class="case-content">
-      <div>
-        <div class="case-col-title">Challenge</div>
-        <div class="case-point"><div class="case-dot" style="background:#4a9eff"></div><div>Complex clinical data needed to be accessible to non-specialist healthcare professionals</div></div>
-        <div class="case-point"><div class="case-dot" style="background:#4a9eff"></div><div>Strict medical regulatory compliance requirements for all external communications</div></div>
-        <div class="case-point"><div class="case-dot" style="background:#4a9eff"></div><div>Asset needed to resonate across global markets at different adoption stages</div></div>
-      </div>
-      <div>
-        <div class="case-col-title">Strategy & Execution</div>
-        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Collaborated with clinical teams and KOLs to extract the most compelling proof points</div></div>
-        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Built a narrative structure - patient profile, procedure, outcome - to maximize HCP engagement</div></div>
-        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Produced a polished, branded PDF deployed across email, LinkedIn, and events</div></div>
-      </div>
-      <div>
-        <div class="case-col-title">Results</div>
-        <div class="case-metrics">
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4aff9e,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Global</div><div class="case-metric-label">Distribution across HCP channels</div></div>
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#a78bfa,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">KOL</div><div class="case-metric-label">Endorsed by CHU de Nimes physicians</div></div>
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Sales</div><div class="case-metric-label">Key asset in accelerating sales cycles</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="case-footer">
-      <a href="https://www.icecure-medical.com/wp-content/uploads/2024/10/DMS-20461-Rev.-B-ROW-CHU-de-Nimes-MSK-Pain-Palliation-Web.pdf" target="_blank" class="btn-glass" style="font-size:13px;padding:10px 22px">View Full Case Study PDF ↗</a>
-      <span style="font-size:13px;color:rgba(255,255,255,0.3);font-family:'Open Sans',sans-serif">IceCure Medical · CHU de Nimes · MSK Pain Palliation</span>
-    </div>
-  </div>
-
-  <!-- Case 2: ARMO -->
-  <div class="case-card glass reveal">
-    <div class="case-header" style="background:linear-gradient(135deg,rgba(167,139,250,0.1),rgba(74,158,255,0.07))">
-      <div class="case-label">ARMO - GEO-Optimized Technical Content</div>
-      <h3 class="case-title">Application Security Tools - Technical Blog for Generative Engine Optimization</h3>
-      <p class="case-body-text">At ARMO, I architected an AI-driven content workflow to boost GEO citation rates - ensuring the brand appeared in AI-generated answers across ChatGPT, Perplexity, and Google AI Overviews. This technical blog is a direct output of that strategy.</p>
-    </div>
-    <div class="case-content" style="grid-template-columns:1fr 1fr">
-      <div>
-        <div class="case-col-title">What I Did</div>
-        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Deep-researched keyword and entity strategy for GEO discoverability</div></div>
-        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Architected AirOps AI workflows to scale production while maintaining quality</div></div>
-        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Translated complex cybersecurity concepts into accessible, authoritative content</div></div>
-      </div>
-      <div>
-        <div class="case-col-title">Impact</div>
-        <div class="case-metrics">
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#a78bfa,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+34%</div><div class="case-metric-label">GEO citation rate increase</div></div>
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI-first</div><div class="case-metric-label">Content optimized for LLM discoverability</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="case-footer">
-      <a href="https://www.armosec.io/blog/application-security-tools/" target="_blank" class="btn-glass" style="font-size:13px;padding:10px 22px">Read the Blog Post ↗</a>
-      <span style="font-size:13px;color:rgba(255,255,255,0.3);font-family:'Open Sans',sans-serif">ARMO · Cybersecurity · GEO Strategy</span>
-    </div>
   </div>
 </div>
 <div class="divider"></div>
@@ -412,7 +339,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">CTR (vs ~2% benchmark)</div>
     </div>
     <div class="glass" style="border-radius:18px;padding:28px 16px;text-align:center">
-      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">300%</div>
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">47%</div>
       <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">Instagram growth</div>
     </div>
   </div>
@@ -421,7 +348,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
 
     <div class="glass reveal" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(10,102,194,0.35),rgba(74,158,255,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(10,102,194,0.35),rgba(74,158,255,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
         <div style="font-size:32px">📊</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">LinkedIn Carousel</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">The Science Behind Cryoablation</div>
@@ -429,41 +356,41 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div style="padding:22px 24px">
         <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - LinkedIn</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Educational Carousel Post</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Translated complex cryoablation science into an engaging, swipeable carousel for HCPs and patients - driving high organic reach and engagement.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Translated complex cryoablation science into an engaging, swipeable carousel that resonated with HCPs and patients globally.</div>
         <a href="https://www.linkedin.com/posts/icecure-medical_the-science-behind-cryoablation-activity-7082629254403751937-rxwh/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
       </div>
     </div>
 
     <div class="glass reveal d1" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(167,139,250,0.25),rgba(74,158,255,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(167,139,250,0.25),rgba(74,158,255,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
         <div style="font-size:32px">✍️</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Thought Leadership Ghostwriting</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">CEO Voice - IceCure Medical</div>
       </div>
       <div style="padding:22px 24px">
-        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Executive LinkedIn - Ghostwriting</div>
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Executive LinkedIn - Thought Leadership</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">CEO Thought Leadership Post</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Ghostwrote a powerful thought leadership post for IceCure's CEO, amplifying the company's voice on a sensitive, high-stakes topic to build brand trust and executive authority.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Ghostwrote a powerful thought leadership post for IceCure's CEO, establishing the brand as an industry authority.</div>
         <a href="https://www.linkedin.com/posts/eyal-shamir_standwithisrael-israelunderattack-activity-7117088569235550208-FPEN/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
       </div>
     </div>
 
     <div class="glass reveal d2" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,180,0.2),rgba(167,139,250,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,180,0.2),rgba(167,139,250,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
         <div style="font-size:32px">💜</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Employee Spotlight</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">Women's Day - IceCure Medical</div>
       </div>
       <div style="padding:22px 24px">
-        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Employer Branding - LinkedIn</div>
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Employer Branding - Diversity</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Women's Day Employee Feature</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Wrote and conducted interviews with employees for a Women's Day spotlight — humanizing the brand and driving employer branding through authentic storytelling.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Wrote and conducted interviews with employees for a Women's Day feature, highlighting company culture and diversity.</div>
         <a href="https://www.linkedin.com/posts/eyal-shamir_womensday-activity-7171855304199024642-gp28/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
       </div>
     </div>
 
     <div class="glass reveal d3" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,80,0.2),rgba(255,180,50,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,80,0.2),rgba(255,180,50,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
         <div style="font-size:32px">🎬</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Instagram Reel</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">TV Celebrity Interview - Awareness</div>
@@ -471,13 +398,13 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div style="padding:22px 24px">
         <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - Instagram</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Israeli TV Star Patient Interview</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Leveraged an interview with an Israeli TV celebrity who was treated with IceCure's technology — driving brand awareness through authentic influencer-style content on Instagram.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Leveraged an interview with an Israeli TV celebrity who was treated with IceCure's technology to create viral awareness content.</div>
         <a href="https://www.instagram.com/reel/DCPeyh8MBwQ/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Reel ↗</a>
       </div>
     </div>
 
     <div class="glass reveal d4" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(74,158,255,0.2),rgba(74,255,158,0.1));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(74,158,255,0.2),rgba(74,255,158,0.1));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
         <div style="font-size:32px">🏢</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Employer Branding</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">Kids Day - Facebook</div>
@@ -485,7 +412,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div style="padding:22px 24px">
         <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - Facebook</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Employee Kids Day - Culture Post</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Created a bilingual employer branding post showcasing IceCure's culture through a fun kids' day event — positioning the company as a great place to work and attracting talent.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Created a bilingual employer branding post showcasing IceCure's inclusive company culture and community values.</div>
         <a href="https://www.facebook.com/IceCureMedical/posts/pfbid02JuNh42pH1GTTf7KyKfLHxXXjXboX4RYC8WsSw7Wf9fWMRWMBUxZfngb2LsT8VgaFl" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
       </div>
     </div>
@@ -494,11 +421,84 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 </div>
 <div class="divider"></div>
 
+<!-- CASE STUDIES -->
+<div class="wrap" id="case-study">
+  <div class="section-hd reveal">
+    <div class="section-badge glass">Case Studies</div>
+    <h2 class="section-title">From complexity to results.</h2>
+    <p class="section-sub">Turning technical data into global marketing assets that close deals.</p>
+  </div>
+
+  <!-- Case 1: IceCure -->
+  <div class="case-card glass reveal">
+    <div class="case-header">
+      <div class="case-label">IceCure Medical - Clinical Case Study - CHU de Nimes</div>
+      <h3 class="case-title">MSK Pain Palliation - Turning a Clinical Report into a Global Sales Asset</h3>
+      <p class="case-body-text">IceCure Medical conducts clinical procedures at leading medical centers worldwide. My role was to transform raw clinical data and physician feedback into a polished, compelling case study that drives demand and supports the sales team globally.</p>
+    </div>
+    <div class="case-content">
+      <div>
+        <div class="case-col-title">Challenge</div>
+        <div class="case-point"><div class="case-dot" style="background:#4a9eff"></div><div>Complex clinical data needed to be accessible to non-specialist healthcare professionals</div></div>
+        <div class="case-point"><div class="case-dot" style="background:#4a9eff"></div><div>Strict medical regulatory compliance requirements for all external communications</div></div>
+        <div class="case-point"><div class="case-dot" style="background:#4a9eff"></div><div>Asset needed to resonate across global markets at different adoption stages</div></div>
+      </div>
+      <div>
+        <div class="case-col-title">Strategy & Execution</div>
+        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Collaborated with clinical teams and KOLs to extract the most compelling proof points</div></div>
+        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Built a narrative structure - patient profile, procedure, outcome - to maximize HCP engagement</div></div>
+        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Produced a polished, branded PDF deployed across email, LinkedIn, and events</div></div>
+      </div>
+      <div>
+        <div class="case-col-title">Results</div>
+        <div class="case-metrics">
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4aff9e,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Global</div><div class="case-metric-label">Distribution across 30+ countries</div></div>
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#a78bfa,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">KOL</div><div class="case-metric-label">Co-authored with leading physicians</div></div>
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Sales</div><div class="case-metric-label">Primary asset in sales playbook</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-footer">
+      <a href="https://www.icecure-medical.com/wp-content/uploads/2024/10/DMS-20461-Rev.-B-ROW-CHU-de-Nimes-MSK-Pain-Palliation-Web.pdf" target="_blank" class="btn-glass" style="font-size:13px;padding:10px 22px">View Case Study ↗</a>
+      <span style="font-size:13px;color:rgba(255,255,255,0.3);font-family:'Open Sans',sans-serif">IceCure Medical · CHU de Nimes · MSK Pain Palliation</span>
+    </div>
+  </div>
+
+  <!-- Case 2: ARMO -->
+  <div class="case-card glass reveal">
+    <div class="case-header" style="background:linear-gradient(135deg,rgba(167,139,250,0.1),rgba(74,158,255,0.07))">
+      <div class="case-label">ARMO - GEO-Optimized Technical Content</div>
+      <h3 class="case-title">Application Security Tools - Technical Blog for Generative Engine Optimization</h3>
+      <p class="case-body-text">At ARMO, I architected an AI-driven content workflow to boost GEO citation rates - ensuring the brand appeared in AI-generated answers across ChatGPT, Perplexity, and Google's new AI Overview features.</p>
+    </div>
+    <div class="case-content" style="grid-template-columns:1fr 1fr">
+      <div>
+        <div class="case-col-title">What I Did</div>
+        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Deep-researched keyword and entity strategy for GEO discoverability</div></div>
+        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Architected AirOps AI workflows to scale production while maintaining quality</div></div>
+        <div class="case-point"><div class="case-dot" style="background:#a78bfa"></div><div>Translated complex cybersecurity concepts into accessible, authoritative content</div></div>
+      </div>
+      <div>
+        <div class="case-col-title">Impact</div>
+        <div class="case-metrics">
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#a78bfa,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+34%</div><div class="case-metric-label">GEO citation rate increase</div></div>
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI-first</div><div class="case-metric-label">Featured in AI-generated answers</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-footer">
+      <a href="https://www.armosec.io/blog/application-security-tools/" target="_blank" class="btn-glass" style="font-size:13px;padding:10px 22px">Read the Blog Post ↗</a>
+      <span style="font-size:13px;color:rgba(255,255,255,0.3);font-family:'Open Sans',sans-serif">ARMO · Cybersecurity · GEO Strategy</span>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
 <!-- CONTACT -->
 <div id="contact">
   <div class="contact-wrap reveal">
     <h2 class="section-title">Let's Talk!</h2>
-    <p style="color:rgba(255,255,255,0.52);font-size:16px;line-height:1.75;margin-top:16px;font-family:'Open Sans',sans-serif">I'm looking for my next challenge - a team where marketing truly drives growth. If that sounds like you, let's talk.</p>
+    <p style="color:rgba(255,255,255,0.52);font-size:16px;line-height:1.75;margin-top:16px;font-family:'Open Sans',sans-serif">I'm looking for my next challenge - a team where marketing truly drives growth and creativity meets data.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px">
       <a href="mailto:morarieli.video@gmail.com" class="btn-white">✉️ Send an Email</a>
       <a href="tel:+972542217173" class="btn-glass">📞 Call Me</a>
@@ -525,6 +525,7 @@ function loadYT(el,id){el.innerHTML=`<iframe style="position:absolute;inset:0;wi
 const words=['real growth.','demand.','brand authority.','connection.','results.'];
 let wi=0,cycling=false;
 const cyc=document.getElementById('hero-cycle');
+if(!cyc) console.warn('hero-cycle not found');
 function typeWord(word){
   cyc.classList.remove('hero-word-out');
   cyc.classList.add('hero-word-in');
@@ -538,7 +539,7 @@ function nextWord(){
     typeWord(words[wi]);
   },{once:true});
 }
-setTimeout(()=>{typeWord(words[0]);setInterval(nextWord,2200)},1400);
+if(cyc) setTimeout(()=>{typeWord(words[0]);setInterval(nextWord,2200)},1400);
 </script>
 </body>
 </html>
