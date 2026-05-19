@@ -11,27 +11,20 @@ html{scroll-behavior:smooth}
 body{background:#060b16;color:#fff;font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
 h1,h2,h3,.nav-logo,.section-title,.case-title,.blog-title,.video-title,.stat-num,.case-metric-val,.big-num{font-family:'Montserrat',sans-serif}
 
+/* CORE UI COMPONENT STYLES */
 .glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.13);position:relative;overflow:hidden}
-.glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.28) 0%,rgba(255,255,255,0.04) 50%,rgba(255,255,255,0.28) 100%)}
-.btn-glass{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.8);padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;position:relative;transition:all .2s;text-decoration:none}
-.btn-glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.4) 100%);-webkit-mask:linear-gradient(#fff 0,#fff calc(100% - 1px),transparent calc(100% - 1px));mask:linear-gradient(#fff 0,#fff calc(100% - 1px),transparent calc(100% - 1px));pointer-events:none}
+.glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.28) 0%,rgba(255,255,255,0.04) 50%,rgba(255,255,255,0.28) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+
+.btn-glass{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border:1px solid rgba(255,255,255,0.18);color:#fff;padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:500;font-size:15px;cursor:pointer;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
+.btn-glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.4) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
 .btn-glass:hover{background:rgba(255,255,255,0.14);transform:translateY(-1px)}
-.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#060b16;padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;transition:all .2s}
+
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#060b16;padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;transition:all .3s;border:none}
 .btn-white:hover{background:#e8e8e8;transform:translateY(-1px)}
 
-#hero-cycle{
-  display:inline-block;
-  background:linear-gradient(135deg,#4a9eff,#a78bfa);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  position:relative;
-  min-width:2px;
-}
-#hero-cycle::after{
-  content:'';position:absolute;right:-4px;top:8%;height:80%;width:3px;
-  background:linear-gradient(135deg,#4a9eff,#a78bfa);
-  border-radius:2px;
-  animation:blink .8s steps(1) infinite;
-}
+/* HERO TYPEWRITING & CYCLING EFFECT */
+#hero-cycle{display:inline-block;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;min-width:2px}
+#hero-cycle::after{content:'';position:absolute;right:-4px;top:8%;height:80%;width:3px;background:linear-gradient(135deg,#4a9eff,#a78bfa);border-radius:2px;animation:blink .8s steps(1) infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 .hero-word-out{animation:wordOut .35s ease forwards}
 .hero-word-in{animation:wordIn .45s cubic-bezier(.22,1,.36,1) forwards}
@@ -42,33 +35,33 @@ h1,h2,h3,.nav-logo,.section-title,.case-title,.blog-title,.video-title,.stat-num
 #hero{position:relative}
 #hero>*:not(#hero-video):not(.hero-overlay){position:relative;z-index:2}
 
-/* NAV */
-nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 48px);max-width:1100px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 28px;border-radius:20px}
+/* DYNAMIC SCROLLSPY NAVIGATION */
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 48px);max-width:1100px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 28px;border-radius:999px;transition:background 0.3s, border-color 0.3s}
 .nav-logo{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.3px}
-.nav-links{display:flex;align-items:center;gap:2px}
-.nav-link{padding:8px 14px;border-radius:999px;color:rgba(255,255,255,0.75);font-size:13px;font-weight:400;text-decoration:none;transition:all .2s}
-.nav-link:hover{color:#fff;background:rgba(255,255,255,0.08)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{padding:8px 16px;border-radius:999px;color:rgba(255,255,255,0.65);font-size:13px;font-weight:400;text-decoration:none;transition:all .25s ease}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,0.06)}
+.nav-link.active{color:#fff;background:rgba(255,255,255,0.13);font-weight:500;box-shadow:inset 0 1px 0 rgba(255,255,255,0.1)}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px;position:relative;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(74,158,255,0.1),rgba(6,11,22,0))}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px;position:relative;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(74,158,255,0.14) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(167,139,250,0.09) 0%,transparent 60%),#060b16}
 h1{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(42px,7vw,82px);line-height:1.05;letter-spacing:-2px;max-width:860px;margin-bottom:28px}
 h1 em{font-style:normal;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:clamp(15px,2vw,17px);color:rgba(255,255,255,0.58);max-width:560px;margin:0 auto 48px;font-weight:300;line-height:1.75;font-family:'Open Sans',sans-serif}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.28);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.28);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Open Sans',sans-serif}
 .scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,0.3),transparent);animation:sline 2s infinite}
 @keyframes sline{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* LAYOUT */
+/* STRUCTURAL CONTAINERS */
 .wrap{max-width:1100px;margin:0 auto;padding:100px 24px}
 .divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,0.09),transparent);max-width:1100px;margin:0 auto}
-.section-badge{display:inline-block;border-radius:999px;padding:6px 18px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:20px}
+.section-badge{display:inline-block;border-radius:999px;padding:6px 18px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:20px;font-family:'Open Sans',sans-serif}
 .section-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(30px,4.5vw,52px);line-height:1.05;letter-spacing:-1.5px;margin-bottom:16px}
 .section-sub{color:rgba(255,255,255,0.5);font-size:15px;font-weight:300;line-height:1.7;font-family:'Open Sans',sans-serif}
 .section-hd{margin-bottom:56px}
 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .about-text p{color:rgba(255,255,255,0.62);font-size:16px;line-height:1.8;margin-bottom:16px;font-family:'Open Sans',sans-serif}
 .tag{font-size:11px;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.58);border:1px solid rgba(255,255,255,0.1);font-family:'Open Sans',sans-serif}
 .tag-blue{background:rgba(74,158,255,0.1);border-color:rgba(74,158,255,0.25);color:rgba(74,158,255,0.9)}
@@ -79,26 +72,36 @@ h1 em{font-style:normal;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webk
 
 /* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
-.skill-card{border-radius:20px;padding:28px;transition:transform .3s,background .3s;cursor:default}
-.skill-card:hover{transform:translateY(-4px)}
+.skill-card{border-radius:20px;padding:28px;transition:transform .3s, background .3s, border-color .3s;cursor:default}
+.skill-card:hover{transform:translateY(-4px);background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.2)}
 .skill-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px}
 .skill-name{font-weight:700;font-size:14px;margin-bottom:8px;font-family:'Montserrat',sans-serif;letter-spacing:-.3px}
 .skill-desc{font-size:13px;color:rgba(255,255,255,0.48);line-height:1.55;margin-bottom:14px;font-family:'Open Sans',sans-serif}
 
-/* VIDEOS */
-.videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.video-card{border-radius:22px;overflow:hidden;transition:transform .3s}
-.video-card:hover{transform:translateY(-5px)}
-.video-embed{position:relative;padding-top:56.25%;background:#000}
-.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
-.video-embed-placeholder{height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center}
-.video-body{padding:22px 24px}
+/* PREMIUM INTERACTIVE VIDEO & SOCIAL MEDIA HOVER CARDS */
+.videos-grid, .social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+
+.interactive-card{border-radius:22px;overflow:hidden;transition:transform .4s cubic-bezier(0.16, 1, 0.3, 1), background .4s, border-color .4s, box-shadow .4s}
+.interactive-card:hover{transform:translateY(-6px);background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.22);box-shadow:0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(74,158,255,0.05)}
+
+.video-embed{position:relative;padding-top:56.25%;background:#000;overflow:hidden}
+.video-embed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.interactive-card:hover .video-embed img{transform:scale(1.03)}
+
+.play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,11,22,0.25);transition:background .3s, opacity .3s}
+.play-btn-circle{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-size:20px;transition:transform .3s cubic-bezier(0.34, 1.56, 0.64, 1), background .3s}
+.interactive-card:hover .play-btn-circle{transform:scale(1.08);background:rgba(255,255,255,0.25);border-color:#fff}
+.video-embed.playing .play-overlay{opacity:0;pointer-events:none}
+.video-embed.playing .play-btn-circle{transform:scale(0.5)}
+
+.video-embed-placeholder{height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;position:relative;overflow:hidden}
+.video-body, .social-body{padding:22px 24px}
 .video-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600}
 .video-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:17px;line-height:1.25;margin-bottom:8px}
 .video-desc{font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif}
-.video-stat{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;background:rgba(74,255,158,0.08);color:rgba(74,255,158,0.9)}
+.video-stat{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;background:rgba(74,255,158,0.08);color:rgba(74,255,158,0.85);border:1px solid rgba(74,255,158,0.18);font-family:'Open Sans',sans-serif}
 
-/* CASE */
+/* CASE STUDIES */
 .case-card{border-radius:28px;overflow:hidden;margin-bottom:20px}
 .case-header{padding:40px 48px 32px;background:linear-gradient(135deg,rgba(74,158,255,0.1),rgba(167,139,250,0.08))}
 .case-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px;font-family:'Open Sans',sans-serif;font-weight:600}
@@ -117,11 +120,11 @@ h1 em{font-style:normal;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webk
 .contact-wrap{text-align:center;padding:80px 24px 60px;max-width:680px;margin:0 auto}
 
 /* FOOTER */
-footer{border-top:1px solid rgba(255,255,255,0.06);padding:28px 24px;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;font-size:13px;color:rgba(255,255,255,0.25)}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:28px 24px;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;font-size:13px;color:rgba(255,255,255,0.28);font-family:'Open Sans',sans-serif}
 footer a{color:rgba(255,255,255,0.28);text-decoration:none;transition:color .2s}
 footer a:hover{color:rgba(255,255,255,0.7)}
 
-/* REVEAL */
+/* VIEWPORT REVEAL SCROLL ANIMATIONS */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
@@ -129,7 +132,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 @media(max-width:768px){
   nav .nav-links{display:none}
   nav{width:calc(100% - 24px);padding:10px 16px}
-  .about-grid,.case-content{grid-template-columns:1fr}
+  .case-content{grid-template-columns:1fr}
   .case-header,.case-content,.case-footer{padding:28px 24px}
 }
 </style>
@@ -155,7 +158,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
     <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_115655_b4d9cd77-feed-43cd-a198-af78ebdf1f7a.mp4" type="video/mp4"/>
   </video>
   <div class="hero-overlay"></div>
-  <h1 class="reveal">B2B Marketing that<br>drives <em>real growth.</em></h1>
+  <h1 class="reveal">B2B Marketing that<br>drives <em id="hero-cycle">real growth.</em></h1>
   <p class="hero-sub reveal d2">AI-driven strategies and high-impact content that create demand, connection, and brand authority.</p>
   <div class="hero-btns reveal d2">
     <a href="#work" class="btn-white">See My Work ↗</a>
@@ -170,18 +173,19 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 <div class="divider"></div>
 
 <!-- ABOUT -->
-<div class="wrap" id="about">
+<section id="about" class="wrap">
   <div class="about-text reveal" style="max-width:680px">
     <div class="section-badge glass">About Me</div>
     <h2 class="section-title">Strategy meets storytelling.</h2>
     <p>Strategic B2B marketing professional with 6+ years of experience driving demand through high-impact content, marketing operations, and innovative AI workflows.</p>
-          <p>I specialize in translating complex technical products - from cybersecurity to medical devices - into high-converting marketing assets that create demand, connection, and brand authority.</p>
+    <p>I specialize in translating complex technical products - from cybersecurity to medical devices - into high-converting marketing assets that create demand, connection, and brand authority.</p>
   </div>
-</div>
+</section>
+
 <div class="divider"></div>
 
 <!-- SKILLS -->
-<div class="wrap" id="skills">
+<section id="skills" class="wrap">
   <div class="section-hd reveal">
     <div class="section-badge glass">Skills & Tools</div>
     <h2 class="section-title">The full marketing stack.</h2>
@@ -228,15 +232,16 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div class="skill-icon" style="background:rgba(255,100,130,0.12)">📄</div>
       <div class="skill-name">Sales Enablement</div>
       <div class="skill-desc">Case studies, presentations, whitepapers, and battle cards that accelerate sales cycles and support global stakeholders</div>
-      <div class="tags"><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Case Studies</span><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Presentations</span></div>
+      <div class="tags"><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Case Studies</span><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Whitepapers</span><span class="tag" style="background:rgba(255,100,130,0.1);border-color:rgba(255,100,130,0.25);color:rgba(255,150,160,0.9)">Decks</span></div>
     </div>
 
   </div>
-</div>
+</section>
+
 <div class="divider"></div>
 
 <!-- WORK / VIDEOS -->
-<div class="wrap" id="work">
+<section id="work" class="wrap">
   <div class="section-hd reveal">
     <div class="section-badge glass">Selected Work</div>
     <h2 class="section-title">Content that performs.</h2>
@@ -244,11 +249,11 @@ footer a:hover{color:rgba(255,255,255,0.7)}
   </div>
   <div class="videos-grid">
 
-    <div class="video-card glass reveal">
-      <div class="video-embed" id="yt1" onclick="loadYT(this,'Zq1vsIx6Zoo')" style="cursor:pointer">
-        <img src="https://img.youtube.com/vi/Zq1vsIx6Zoo/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3)">
-          <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:24px">▶</div>
+    <div class="interactive-card glass reveal">
+      <div class="video-embed" id="yt1" onclick="loadYT(this,'Zq1vsIx6Zoo')">
+        <img src="https://img.youtube.com/vi/Zq1vsIx6Zoo/hqdefault.jpg"/>
+        <div class="play-overlay">
+          <div class="play-btn-circle">▶</div>
         </div>
       </div>
       <div class="video-body">
@@ -259,11 +264,11 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       </div>
     </div>
 
-    <div class="video-card glass reveal d1">
-      <div class="video-embed" id="yt2" onclick="loadYT(this,'TMFCem1EfRQ')" style="cursor:pointer">
-        <img src="https://img.youtube.com/vi/TMFCem1EfRQ/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3)">
-          <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:24px">▶</div>
+    <div class="interactive-card glass reveal d1">
+      <div class="video-embed" id="yt2" onclick="loadYT(this,'TMFCem1EfRQ')">
+        <img src="https://img.youtube.com/vi/TMFCem1EfRQ/hqdefault.jpg"/>
+        <div class="play-overlay">
+          <div class="play-btn-circle">▶</div>
         </div>
       </div>
       <div class="video-body">
@@ -274,12 +279,12 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       </div>
     </div>
 
-    <div class="video-card glass reveal d2">
+    <div class="interactive-card glass reveal d2">
       <a href="https://www.facebook.com/share/v/18KY9JDoDH/" target="_blank" style="text-decoration:none;display:block">
-        <div class="video-embed-placeholder" style="background:linear-gradient(135deg,rgba(74,158,255,0.15),rgba(167,139,250,0.1));position:relative;overflow:hidden;cursor:pointer">
+        <div class="video-embed-placeholder" style="background:linear-gradient(135deg,rgba(74,158,255,0.15),rgba(167,139,250,0.1))">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:24px;text-align:center">
-            <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid rgba(255,255,255,0.3)">🎬</div>
-            <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff">IDF Rosh Hashana Video</div>
+            <div class="play-btn-circle">▶</div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff;margin-top:4px">IDF Rosh Hashana Video</div>
             <div style="font-size:12px;color:rgba(255,255,255,0.55);font-family:'Open Sans',sans-serif">#3 most-watched video in Israel · 2M+ views</div>
             <div style="font-size:11px;color:rgba(255,255,255,0.35);font-family:'Open Sans',sans-serif;border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:999px">Watch on Facebook ↗</div>
           </div>
@@ -293,12 +298,12 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       </div>
     </div>
 
-    <div class="video-card glass reveal d3">
+    <div class="interactive-card glass reveal d3">
       <a href="https://www.tiktok.com/@israeli_air_force/video/7319960942622543112" target="_blank" style="text-decoration:none;display:block">
-        <div class="video-embed-placeholder" style="background:linear-gradient(135deg,rgba(255,100,80,0.15),rgba(255,180,50,0.1));position:relative;overflow:hidden;cursor:pointer">
+        <div class="video-embed-placeholder" style="background:linear-gradient(135deg,rgba(255,100,80,0.15),rgba(255,180,50,0.1))">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:24px;text-align:center">
-            <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid rgba(255,255,255,0.3)">🎬</div>
-            <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff">IAF Reserve Soldiers</div>
+            <div class="play-btn-circle">▶</div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff;margin-top:4px">IAF Reserve Soldiers</div>
             <div style="font-size:12px;color:rgba(255,255,255,0.55);font-family:'Open Sans',sans-serif">Israeli Air Force TikTok · Reserve duty production</div>
             <div style="font-size:11px;color:rgba(255,255,255,0.35);font-family:'Open Sans',sans-serif;border:1px solid rgba(255,255,255,0.2);padding:4px 12px;border-radius:999px">Watch on TikTok ↗</div>
           </div>
@@ -313,19 +318,19 @@ footer a:hover{color:rgba(255,255,255,0.7)}
     </div>
 
   </div>
-</div>
+</section>
+
 <div class="divider"></div>
 
 <!-- SOCIAL MEDIA -->
-<div class="wrap" id="social">
+<section id="social" class="wrap">
   <div class="section-hd reveal">
     <div class="section-badge glass">Social Media</div>
     <h2 class="section-title">Organic growth that outperforms.</h2>
-    <p class="section-sub">Growing IceCure Medical's LinkedIn from 7K to 12K followers — 71% growth in under 3 years, with 10% avg. engagement rate and 6% CTR, significantly outperforming industry benchmarks.</p>
+    <p class="section-sub">Growing IceCure Medical's LinkedIn from 7K to 12K followers - 71% growth in under 3 years, with 10% avg. engagement rate and 6% CTR, significantly outperforming industry benchmarks.</p>
   </div>
-
   <!-- Stats row -->
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:48px" class="reveal">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:48px" class="reveal">
     <div class="glass" style="border-radius:18px;padding:28px 16px;text-align:center">
       <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">71%</div>
       <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">LinkedIn follower growth</div>
@@ -339,90 +344,84 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">CTR (vs ~2% benchmark)</div>
     </div>
     <div class="glass" style="border-radius:18px;padding:28px 16px;text-align:center">
-      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">47%</div>
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">300%</div>
       <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">Instagram growth</div>
     </div>
   </div>
-
   <!-- Post examples grid -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
-
-    <div class="glass reveal" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(10,102,194,0.35),rgba(74,158,255,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
+  <div class="social-grid">
+    <div class="interactive-card glass reveal">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(10,102,194,0.35),rgba(74,158,255,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
         <div style="font-size:32px">📊</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">LinkedIn Carousel</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">The Science Behind Cryoablation</div>
       </div>
-      <div style="padding:22px 24px">
+      <div class="social-body">
         <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - LinkedIn</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Educational Carousel Post</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Translated complex cryoablation science into an engaging, swipeable carousel that resonated with HCPs and patients globally.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Translated complex cryoablation science into an engaging, swipeable carousel for HCPs and patients - driving high organic reach and engagement.</div>
         <a href="https://www.linkedin.com/posts/icecure-medical_the-science-behind-cryoablation-activity-7082629254403751937-rxwh/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
       </div>
     </div>
-
-    <div class="glass reveal d1" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(167,139,250,0.25),rgba(74,158,255,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
+    <div class="interactive-card glass reveal d1">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(167,139,250,0.25),rgba(74,158,255,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
         <div style="font-size:32px">✍️</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Thought Leadership Ghostwriting</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">CEO Voice - IceCure Medical</div>
       </div>
-      <div style="padding:22px 24px">
-        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Executive LinkedIn - Thought Leadership</div>
+      <div class="social-body">
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Executive LinkedIn - Ghostwriting</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">CEO Thought Leadership Post</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Ghostwrote a powerful thought leadership post for IceCure's CEO, establishing the brand as an industry authority.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Ghostwrote a powerful thought leadership post for IceCure's CEO, amplifying the company's voice on a sensitive, high-stakes topic to build brand trust and executive authority.</div>
         <a href="https://www.linkedin.com/posts/eyal-shamir_standwithisrael-israelunderattack-activity-7117088569235550208-FPEN/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
       </div>
     </div>
-
-    <div class="glass reveal d2" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,180,0.2),rgba(167,139,250,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
+    <div class="interactive-card glass reveal d2">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,180,0.2),rgba(167,139,250,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
         <div style="font-size:32px">💜</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Employee Spotlight</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">Women's Day - IceCure Medical</div>
       </div>
-      <div style="padding:22px 24px">
-        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Employer Branding - Diversity</div>
+      <div class="social-body">
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Employer Branding - LinkedIn</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Women's Day Employee Feature</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Wrote and conducted interviews with employees for a Women's Day feature, highlighting company culture and diversity.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Wrote and conducted interviews with employees for a Women's Day spotlight - humanizing the brand and driving employer branding through authentic storytelling.</div>
         <a href="https://www.linkedin.com/posts/eyal-shamir_womensday-activity-7171855304199024642-gp28/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
       </div>
     </div>
-
-    <div class="glass reveal d3" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,80,0.2),rgba(255,180,50,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
+    <div class="interactive-card glass reveal d3">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,80,0.2),rgba(255,180,50,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
         <div style="font-size:32px">🎬</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Instagram Reel</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">TV Celebrity Interview - Awareness</div>
       </div>
-      <div style="padding:22px 24px">
+      <div class="social-body">
         <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - Instagram</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Israeli TV Star Patient Interview</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Leveraged an interview with an Israeli TV celebrity who was treated with IceCure's technology to create viral awareness content.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Leveraged an interview with an Israeli TV celebrity who was treated with IceCure's technology - driving brand awareness through authentic influencer-style content on Instagram.</div>
         <a href="https://www.instagram.com/reel/DCPeyh8MBwQ/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Reel ↗</a>
       </div>
     </div>
-
-    <div class="glass reveal d4" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="height:160px;background:linear-gradient(135deg,rgba(74,158,255,0.2),rgba(74,255,158,0.1));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px">
+    <div class="interactive-card glass reveal d4">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(74,158,255,0.2),rgba(74,255,158,0.1));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
         <div style="font-size:32px">🏢</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Employer Branding</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">Kids Day - Facebook</div>
       </div>
-      <div style="padding:22px 24px">
+      <div class="social-body">
         <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - Facebook</div>
         <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Employee Kids Day - Culture Post</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Created a bilingual employer branding post showcasing IceCure's inclusive company culture and community values.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Created a bilingual employer branding post showcasing IceCure's culture through a fun kids' day event - positioning the company as a great place to work and attracting talent.</div>
         <a href="https://www.facebook.com/IceCureMedical/posts/pfbid02JuNh42pH1GTTf7KyKfLHxXXjXboX4RYC8WsSw7Wf9fWMRWMBUxZfngb2LsT8VgaFl" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
       </div>
     </div>
-
   </div>
-</div>
+</section>
+
 <div class="divider"></div>
 
 <!-- CASE STUDIES -->
-<div class="wrap" id="case-study">
+<section id="case-study" class="wrap">
   <div class="section-hd reveal">
     <div class="section-badge glass">Case Studies</div>
     <h2 class="section-title">From complexity to results.</h2>
@@ -434,7 +433,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
     <div class="case-header">
       <div class="case-label">IceCure Medical - Clinical Case Study - CHU de Nimes</div>
       <h3 class="case-title">MSK Pain Palliation - Turning a Clinical Report into a Global Sales Asset</h3>
-      <p class="case-body-text">IceCure Medical conducts clinical procedures at leading medical centers worldwide. My role was to transform raw clinical data and physician feedback into a polished, compelling case study that drives demand and supports the sales team globally.</p>
+      <p class="case-body-text">IceCure Medical conducts clinical procedures at leading medical centers worldwide. My role was to transform raw clinical data and physician feedback into a polished, compliant case study that could drive HCP awareness globally - bridging the gap between medical evidence and marketing impact.</p>
     </div>
     <div class="case-content">
       <div>
@@ -452,14 +451,14 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <div>
         <div class="case-col-title">Results</div>
         <div class="case-metrics">
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4aff9e,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Global</div><div class="case-metric-label">Distribution across 30+ countries</div></div>
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#a78bfa,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">KOL</div><div class="case-metric-label">Co-authored with leading physicians</div></div>
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Sales</div><div class="case-metric-label">Primary asset in sales playbook</div></div>
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4aff9e,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Global</div><div class="case-metric-label">Distribution across HCP channels</div></div>
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#a78bfa,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">KOL</div><div class="case-metric-label">Endorsed by CHU de Nimes physicians</div></div>
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Sales</div><div class="case-metric-label">Key asset in accelerating sales cycles</div></div>
         </div>
       </div>
     </div>
     <div class="case-footer">
-      <a href="https://www.icecure-medical.com/wp-content/uploads/2024/10/DMS-20461-Rev.-B-ROW-CHU-de-Nimes-MSK-Pain-Palliation-Web.pdf" target="_blank" class="btn-glass" style="font-size:13px;padding:10px 22px">View Case Study ↗</a>
+      <a href="https://www.icecure-medical.com/wp-content/uploads/2024/10/DMS-20461-Rev.-B-ROW-CHU-de-Nimes-MSK-Pain-Palliation-Web.pdf" target="_blank" class="btn-glass" style="font-size:13px;padding:10px 22px">View Full Case Study PDF ↗</a>
       <span style="font-size:13px;color:rgba(255,255,255,0.3);font-family:'Open Sans',sans-serif">IceCure Medical · CHU de Nimes · MSK Pain Palliation</span>
     </div>
   </div>
@@ -469,7 +468,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
     <div class="case-header" style="background:linear-gradient(135deg,rgba(167,139,250,0.1),rgba(74,158,255,0.07))">
       <div class="case-label">ARMO - GEO-Optimized Technical Content</div>
       <h3 class="case-title">Application Security Tools - Technical Blog for Generative Engine Optimization</h3>
-      <p class="case-body-text">At ARMO, I architected an AI-driven content workflow to boost GEO citation rates - ensuring the brand appeared in AI-generated answers across ChatGPT, Perplexity, and Google's new AI Overview features.</p>
+      <p class="case-body-text">At ARMO, I architected an AI-driven content workflow to boost GEO citation rates - ensuring the brand appeared in AI-generated answers across ChatGPT, Perplexity, and Google AI Overviews. This technical blog is a direct output of that strategy.</p>
     </div>
     <div class="case-content" style="grid-template-columns:1fr 1fr">
       <div>
@@ -482,7 +481,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
         <div class="case-col-title">Impact</div>
         <div class="case-metrics">
           <div><div class="case-metric-val" style="background:linear-gradient(135deg,#a78bfa,#4a9eff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+34%</div><div class="case-metric-label">GEO citation rate increase</div></div>
-          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI-first</div><div class="case-metric-label">Featured in AI-generated answers</div></div>
+          <div><div class="case-metric-val" style="background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AI-first</div><div class="case-metric-label">Content optimized for LLM discoverability</div></div>
         </div>
       </div>
     </div>
@@ -491,21 +490,22 @@ footer a:hover{color:rgba(255,255,255,0.7)}
       <span style="font-size:13px;color:rgba(255,255,255,0.3);font-family:'Open Sans',sans-serif">ARMO · Cybersecurity · GEO Strategy</span>
     </div>
   </div>
-</div>
+</section>
+
 <div class="divider"></div>
 
 <!-- CONTACT -->
-<div id="contact">
+<section id="contact">
   <div class="contact-wrap reveal">
     <h2 class="section-title">Let's Talk!</h2>
-    <p style="color:rgba(255,255,255,0.52);font-size:16px;line-height:1.75;margin-top:16px;font-family:'Open Sans',sans-serif">I'm looking for my next challenge - a team where marketing truly drives growth and creativity meets data.</p>
+    <p style="color:rgba(255,255,255,0.52);font-size:16px;line-height:1.75;margin-top:16px;font-family:'Open Sans',sans-serif">I'm looking for my next challenge - a team where marketing truly drives growth. If that sounds like you, let's talk.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px">
       <a href="mailto:morarieli.video@gmail.com" class="btn-white">✉️ Send an Email</a>
       <a href="tel:+972542217173" class="btn-glass">📞 Call Me</a>
     </div>
     <p style="margin-top:28px;font-size:13px;color:rgba(255,255,255,0.28);font-family:'Open Sans',sans-serif">Israel · Native English & Hebrew · +972 54 221 7173</p>
   </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -517,21 +517,32 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.1});
+// Content Viewport Entry Observer (Fade in on scroll)
+const obs=new IntersectionObserver(e=>{
+  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})
+},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-function loadYT(el,id){el.innerHTML=`<iframe style="position:absolute;inset:0;width:100%;height:100%;border:none" src="https://www.youtube.com/embed/${id}?autoplay=1" allow="autoplay;encrypted-media" allowfullscreen></iframe>`}
 
-// Hero cycling words
+// Interactive Video Layer Spawner (YT Iframe Injector)
+function loadYT(el,id){
+  el.classList.add('playing');
+  setTimeout(() => {
+    el.innerHTML=`<iframe style="position:absolute;inset:0;width:100%;height:100%;border:none" src="https://www.youtube.com/embed/${id}?autoplay=1" allow="autoplay;encrypted-media" allowfullscreen></iframe>`;
+  }, 200);
+}
+
+// Hero Text Cycle Configuration
 const words=['real growth.','demand.','brand authority.','connection.','results.'];
-let wi=0,cycling=false;
+let wi=0;
 const cyc=document.getElementById('hero-cycle');
-if(!cyc) console.warn('hero-cycle not found');
+
 function typeWord(word){
   cyc.classList.remove('hero-word-out');
   cyc.classList.add('hero-word-in');
   cyc.textContent=word;
   cyc.addEventListener('animationend',()=>cyc.classList.remove('hero-word-in'),{once:true});
 }
+
 function nextWord(){
   cyc.classList.add('hero-word-out');
   cyc.addEventListener('animationend',()=>{
@@ -539,7 +550,35 @@ function nextWord(){
     typeWord(words[wi]);
   },{once:true});
 }
-if(cyc) setTimeout(()=>{typeWord(words[0]);setInterval(nextWord,2200)},1400);
+
+setTimeout(()=>{
+  typeWord(words[0]);
+  setInterval(nextWord,2200);
+},1400);
+
+// Scrollspy Tracking Engine
+const sections = document.querySelectorAll('section, #hero');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let currentId = '';
+  const scrollPosition = window.scrollY + 160;
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      currentId = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${currentId}`) {
+      link.classList.add('active');
+    }
+  });
+});
 </script>
 </body>
 </html>
