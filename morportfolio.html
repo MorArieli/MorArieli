@@ -525,7 +525,6 @@ function loadYT(el,id){el.innerHTML=`<iframe style="position:absolute;inset:0;wi
 const words=['real growth.','demand.','brand authority.','connection.','results.'];
 let wi=0,cycling=false;
 const cyc=document.getElementById('hero-cycle');
-if(!cyc) console.warn('hero-cycle not found');
 function typeWord(word){
   cyc.classList.remove('hero-word-out');
   cyc.classList.add('hero-word-in');
@@ -539,7 +538,7 @@ function nextWord(){
     typeWord(words[wi]);
   },{once:true});
 }
-if(cyc) setTimeout(()=>{typeWord(words[0]);setInterval(nextWord,2200)},1400);
+setTimeout(()=>{typeWord(words[0]);setInterval(nextWord,2200)},1400);
 </script>
 </body>
 </html>
