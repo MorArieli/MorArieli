@@ -19,7 +19,24 @@ h1,h2,h3,.nav-logo,.section-title,.case-title,.blog-title,.video-title,.stat-num
 .btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#060b16;padding:12px 28px;border-radius:999px;font-family:'Open Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;transition:all .3s;border:none}
 .btn-white:hover{background:#e8e8e8;transform:translateY(-1px)}
 
-/* VIDEO BG */
+#hero-cycle{
+  display:inline-block;
+  background:linear-gradient(135deg,#4a9eff,#a78bfa);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  position:relative;
+  min-width:2px;
+}
+#hero-cycle::after{
+  content:'';position:absolute;right:-4px;top:8%;height:80%;width:3px;
+  background:linear-gradient(135deg,#4a9eff,#a78bfa);
+  border-radius:2px;
+  animation:blink .8s steps(1) infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-word-out{animation:wordOut .35s ease forwards}
+.hero-word-in{animation:wordIn .45s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes wordOut{0%{opacity:1;transform:translateY(0) blur(0px)}100%{opacity:0;transform:translateY(-18px);filter:blur(6px)}}
+@keyframes wordIn{0%{opacity:0;transform:translateY(22px);filter:blur(8px)}100%{opacity:1;transform:translateY(0);filter:blur(0px)}}
 #hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.55}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,11,22,0.3) 0%,rgba(6,11,22,0.1) 40%,rgba(6,11,22,0.85) 100%);z-index:1}
 #hero{position:relative}
@@ -127,6 +144,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#work" class="nav-link">Work</a>
     <a href="#case-study" class="nav-link">Case Studies</a>
+    <a href="#social" class="nav-link">Social</a>
     <a href="#contact" class="btn-white" style="padding:8px 20px;font-size:13px">Contact ↗</a>
   </div>
 </nav>
@@ -138,7 +156,7 @@ footer a:hover{color:rgba(255,255,255,0.7)}
   </video>
   <div class="hero-overlay"></div>
   <h1 class="reveal">B2B Marketing that<br>drives <em>real growth.</em></h1>
-  <p class="hero-sub reveal d1">AI-driven strategies and high-impact content that create demand, connection, and brand authority.</p>
+  <p class="hero-sub reveal d2">AI-driven strategies and high-impact content that create demand, connection, and brand authority.</p>
   <div class="hero-btns reveal d2">
     <a href="#work" class="btn-white">See My Work ↗</a>
     <a href="#contact" class="btn-glass">Contact Me</a>
@@ -371,6 +389,111 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 </div>
 <div class="divider"></div>
 
+<!-- SOCIAL MEDIA -->
+<div class="wrap" id="social">
+  <div class="section-hd reveal">
+    <div class="section-badge glass">Social Media</div>
+    <h2 class="section-title">Organic growth that outperforms.</h2>
+    <p class="section-sub">Growing IceCure Medical's LinkedIn from 7K to 12K followers — 71% growth in under 3 years, with 10% avg. engagement rate and 6% CTR, significantly outperforming industry benchmarks.</p>
+  </div>
+
+  <!-- Stats row -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:48px" class="reveal">
+    <div class="glass" style="border-radius:18px;padding:28px 16px;text-align:center">
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">71%</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">LinkedIn follower growth</div>
+    </div>
+    <div class="glass" style="border-radius:18px;padding:28px 16px;text-align:center">
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">10%</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">Avg. engagement rate</div>
+    </div>
+    <div class="glass" style="border-radius:18px;padding:28px 16px;text-align:center">
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">6%</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">CTR (vs ~2% benchmark)</div>
+    </div>
+    <div class="glass" style="border-radius:18px;padding:28px 16px;text-align:center">
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1.5px;background:linear-gradient(135deg,#4a9eff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">300%</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.42);margin-top:6px;font-family:'Open Sans',sans-serif">Instagram growth</div>
+    </div>
+  </div>
+
+  <!-- Post examples grid -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+
+    <div class="glass reveal" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(10,102,194,0.35),rgba(74,158,255,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+        <div style="font-size:32px">📊</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">LinkedIn Carousel</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">The Science Behind Cryoablation</div>
+      </div>
+      <div style="padding:22px 24px">
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - LinkedIn</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Educational Carousel Post</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Translated complex cryoablation science into an engaging, swipeable carousel for HCPs and patients - driving high organic reach and engagement.</div>
+        <a href="https://www.linkedin.com/posts/icecure-medical_the-science-behind-cryoablation-activity-7082629254403751937-rxwh/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
+      </div>
+    </div>
+
+    <div class="glass reveal d1" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(167,139,250,0.25),rgba(74,158,255,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+        <div style="font-size:32px">✍️</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Thought Leadership Ghostwriting</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">CEO Voice - IceCure Medical</div>
+      </div>
+      <div style="padding:22px 24px">
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Executive LinkedIn - Ghostwriting</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">CEO Thought Leadership Post</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Ghostwrote a powerful thought leadership post for IceCure's CEO, amplifying the company's voice on a sensitive, high-stakes topic to build brand trust and executive authority.</div>
+        <a href="https://www.linkedin.com/posts/eyal-shamir_standwithisrael-israelunderattack-activity-7117088569235550208-FPEN/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
+      </div>
+    </div>
+
+    <div class="glass reveal d2" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,180,0.2),rgba(167,139,250,0.15));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+        <div style="font-size:32px">💜</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Employee Spotlight</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">Women's Day - IceCure Medical</div>
+      </div>
+      <div style="padding:22px 24px">
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">Employer Branding - LinkedIn</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Women's Day Employee Feature</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Wrote and conducted interviews with employees for a Women's Day spotlight — humanizing the brand and driving employer branding through authentic storytelling.</div>
+        <a href="https://www.linkedin.com/posts/eyal-shamir_womensday-activity-7171855304199024642-gp28/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
+      </div>
+    </div>
+
+    <div class="glass reveal d3" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(255,100,80,0.2),rgba(255,180,50,0.12));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+        <div style="font-size:32px">🎬</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Instagram Reel</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">TV Celebrity Interview - Awareness</div>
+      </div>
+      <div style="padding:22px 24px">
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - Instagram</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Israeli TV Star Patient Interview</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Leveraged an interview with an Israeli TV celebrity who was treated with IceCure's technology — driving brand awareness through authentic influencer-style content on Instagram.</div>
+        <a href="https://www.instagram.com/reel/DCPeyh8MBwQ/" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Reel ↗</a>
+      </div>
+    </div>
+
+    <div class="glass reveal d4" style="border-radius:22px;overflow:hidden;transition:transform .3s" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="height:160px;background:linear-gradient(135deg,rgba(74,158,255,0.2),rgba(74,255,158,0.1));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center">
+        <div style="font-size:32px">🏢</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px">Employer Branding</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);font-family:'Open Sans',sans-serif">Kids Day - Facebook</div>
+      </div>
+      <div style="padding:22px 24px">
+        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;font-family:'Open Sans',sans-serif;font-weight:600">IceCure Medical - Facebook</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px">Employee Kids Day - Culture Post</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.52);line-height:1.55;font-family:'Open Sans',sans-serif;margin-bottom:16px">Created a bilingual employer branding post showcasing IceCure's culture through a fun kids' day event — positioning the company as a great place to work and attracting talent.</div>
+        <a href="https://www.facebook.com/IceCureMedical/posts/pfbid02JuNh42pH1GTTf7KyKfLHxXXjXboX4RYC8WsSw7Wf9fWMRWMBUxZfngb2LsT8VgaFl" target="_blank" class="btn-glass" style="font-size:12px;padding:8px 16px">View Post ↗</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="divider"></div>
+
 <!-- CONTACT -->
 <div id="contact">
   <div class="contact-wrap reveal">
@@ -397,6 +520,26 @@ footer a:hover{color:rgba(255,255,255,0.7)}
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 function loadYT(el,id){el.innerHTML=`<iframe style="position:absolute;inset:0;width:100%;height:100%;border:none" src="https://www.youtube.com/embed/${id}?autoplay=1" allow="autoplay;encrypted-media" allowfullscreen></iframe>`}
+
+// Hero cycling words
+const words=['real growth.','demand.','brand authority.','connection.','results.'];
+let wi=0,cycling=false;
+const cyc=document.getElementById('hero-cycle');
+if(!cyc) console.warn('hero-cycle not found');
+function typeWord(word){
+  cyc.classList.remove('hero-word-out');
+  cyc.classList.add('hero-word-in');
+  cyc.textContent=word;
+  cyc.addEventListener('animationend',()=>cyc.classList.remove('hero-word-in'),{once:true});
+}
+function nextWord(){
+  cyc.classList.add('hero-word-out');
+  cyc.addEventListener('animationend',()=>{
+    wi=(wi+1)%words.length;
+    typeWord(words[wi]);
+  },{once:true});
+}
+if(cyc) setTimeout(()=>{typeWord(words[0]);setInterval(nextWord,2200)},1400);
 </script>
 </body>
 </html>
